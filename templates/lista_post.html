@@ -1,6 +1,14 @@
 {% extends "layout.html"%} {% block content %}
 
 <h1 class="text-center display-1 fw-bold p-3">Lista Posts</h1>
+{% if messages %}
+    <div class="alert alert-success" role="alert">
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    </div>
+{% endif %}
+
 <div class="row">
   <div class="col-12 col-md-8">
     {% for object in object_list %} {% if forloop.counter0|divisibleby:2 %}

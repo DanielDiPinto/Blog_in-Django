@@ -1,0 +1,14 @@
+# File di log
+*.log
+
+# File di byte compilati Python
+*.pyc
+
+# Directory degli ambienti virtuali
+virtual/
+
+# File di configurazione locali
+.env
+
+# File di database SQLite
+db.sqlite3

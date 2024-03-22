@@ -6,6 +6,7 @@
 
 # Directory degli ambienti virtuali
 virtual/
+venv/
 
 # File di configurazione locali
 .env

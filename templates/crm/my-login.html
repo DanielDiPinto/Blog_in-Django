@@ -5,7 +5,9 @@
       <h1 class="text-center my-3 display-1 fw-bold">Login</h1>
       {% if messages %}
       <div class="alert alert-success" role="alert">
-        {% for message in messages %} {{ message }} {% endfor %}
+        {% for message in messages %}
+         {{ message }}
+          {% endfor %}
       </div>
       {% endif %}
       <form method="POST" action="">

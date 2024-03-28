@@ -35,14 +35,13 @@ def my_login(request):
             username = request.POST.get('username')
             password = request.POST.get('password')
             
-            user = authenticate(request, username=username, password=password)
-
-            if user is not None:
-                auth.login(request, user)
-                messages.success(request, "Sei dentro")
-                return redirect("/")
-            else:
-                messages.error(request, "errore")
+            user = form.get_user()
+            auth.login(request, user)
+            messages.success(request, "Sei dentro")
+            return redirect("/")
+        
+        else:
+            messages.error(request, form.errors['__all__'] )
             
     context = {'loginform':form}
     

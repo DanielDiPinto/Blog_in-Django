@@ -1,11 +1,47 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-7">
+      <h1 class="text-center my-3 display-1 fw-bold">Login</h1>
+      {% if messages %}
+      <div class="alert alert-success" role="alert">
+        {% for message in messages %} {{ message }} {% endfor %}
+      </div>
+      {% endif %}
+      <form method="POST" action="">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="id_username" class="form-label">Nome utente:</label>
+          <input
+            type="text"
+            name="username"
+            maxlength="150"
+            required
+            aria-invalid="true"
+            id="id_username"
+            class="form-control"
+          />
+          <div id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="id_password" class="form-label">Password</label>
+          <input
+            type="password"
+            name="password"
+            required
+            aria-invalid="true"
+            id="id_password"
+            class="form-control"
+          />
+        </div>
 
-
-{% block content %}
-    <h1>loginnnn</h1>
-    <form method="POST" action="">
-        {% csrf_token %} 
-        {{loginform.as_p}}
-        <input type="submit" value="Login">
-     </form>
+        <button type="submit" class="btn btn-primary" value="Login">
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock content %}

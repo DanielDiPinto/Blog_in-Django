@@ -24,6 +24,8 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 INSTALLED_APPS = [
     'posts',
     'crm',
+    'multi_captcha_admin',
+    'captcha',
     'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -32,6 +34,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+MULTI_CAPTCHA_ADMIN = {
+    'engine': 'simple-captcha',
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
